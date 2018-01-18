@@ -416,7 +416,8 @@ public class IWindowManagerImpl implements IWindowManager {
     }
 
     @Override
-    public void dismissKeyguard(IKeyguardDismissCallback callback) throws RemoteException {
+    public void dismissKeyguard(IKeyguardDismissCallback callback, CharSequence message)
+            throws RemoteException {
     }
 
     @Override
@@ -536,5 +537,18 @@ public class IWindowManagerImpl implements IWindowManager {
     @Override
     public void unregisterWallpaperVisibilityListener(IWallpaperVisibilityListener listener,
             int displayId) throws RemoteException {
+    }
+
+    @Override
+    public void startWindowTrace() throws RemoteException {
+    }
+
+    @Override
+    public void stopWindowTrace() throws RemoteException {
+    }
+
+    @Override
+    public boolean isWindowTraceEnabled() throws RemoteException {
+        return false;
     }
 }

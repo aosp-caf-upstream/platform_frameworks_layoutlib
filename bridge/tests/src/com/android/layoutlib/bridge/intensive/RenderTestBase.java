@@ -21,9 +21,9 @@ import com.android.ide.common.rendering.api.RenderSession;
 import com.android.ide.common.rendering.api.Result;
 import com.android.ide.common.rendering.api.SessionParams;
 import com.android.ide.common.rendering.api.SessionParams.RenderingMode;
-import com.android.ide.common.resources.FrameworkResources;
-import com.android.ide.common.resources.ResourceItem;
-import com.android.ide.common.resources.ResourceRepository;
+import com.android.ide.common.resources.deprecated.FrameworkResources;
+import com.android.ide.common.resources.deprecated.ResourceItem;
+import com.android.ide.common.resources.deprecated.ResourceRepository;
 import com.android.io.FolderWrapper;
 import com.android.layoutlib.bridge.Bridge;
 import com.android.layoutlib.bridge.android.RenderParamsFlags;
@@ -59,6 +59,7 @@ import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import com.google.android.collect.Lists;
+import com.google.common.collect.ImmutableMap;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
@@ -418,9 +419,8 @@ public class RenderTestBase {
                 }
 
                 @Override
-                public void fidelityWarning(@Nullable String tag, String message,
-                        Throwable throwable, Object data) {
-
+                public void fidelityWarning(String tag, String message, Throwable throwable,
+                        Object viewCookie, Object data) {
                     System.out.println("FidelityWarning " + tag + ": " + message);
                     if (throwable != null) {
                         throwable.printStackTrace();

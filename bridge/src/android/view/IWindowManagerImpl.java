@@ -346,7 +346,7 @@ public class IWindowManagerImpl implements IWindowManager {
     }
 
     @Override
-    public void setScreenCaptureDisabled(int userId, boolean disabled) {
+    public void refreshScreenCaptureDisabled(int userId) {
         // TODO Auto-generated method stub
     }
 
@@ -383,6 +383,11 @@ public class IWindowManagerImpl implements IWindowManager {
 
     @Override
     public void setPipVisibility(boolean visible) {
+        // TODO Auto-generated method stub
+    }
+
+    @Override
+    public void setShelfHeight(boolean visible, int shelfHeight) {
         // TODO Auto-generated method stub
     }
 
@@ -560,5 +565,9 @@ public class IWindowManagerImpl implements IWindowManager {
 
     @Override
     public void requestUserActivityNotification() throws RemoteException {
+    }
+
+    @Override
+    public void dontOverrideDisplayInfo(int displayId) throws RemoteException {
     }
 }
